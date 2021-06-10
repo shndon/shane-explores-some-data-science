@@ -1,0 +1,12 @@
+---
+title: "About this blog"
+description: |
+  Some additional details about the blog
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+I made this blog as an exercise in the UNSW Health Data Science course on Visualising Health Data.
+
+I intend to use it for trying out data science experiments, and possibly posting if I feel I have something useful to say.

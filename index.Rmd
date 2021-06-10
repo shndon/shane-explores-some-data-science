@@ -1,0 +1,5 @@
+---
+title: "Shane's Little Data Science Blog"
+site: distill::distill_website
+listing: posts
+---

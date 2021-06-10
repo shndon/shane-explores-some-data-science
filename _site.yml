@@ -1,0 +1,12 @@
+name: "shane-explores-some-data-science"
+title: "Shane's Little Data Science Blog"
+description: |
+  Shane's Little Data Science Blog
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article
