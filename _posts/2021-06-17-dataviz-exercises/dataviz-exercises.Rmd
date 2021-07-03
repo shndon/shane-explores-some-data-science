@@ -1,0 +1,148 @@
+---
+title: "DataViz Exercises"
+description: |
+  Working through the week 3 interactive/tutorial of HDAT9800
+author:
+  - name: Shane Donohoe
+    url: https://example.com/shanedon
+date: 06-17-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+```
+
+We are following some example work from https://r4ds.had.co.nz/data-visualisation.html
+
+Because of time I'm not going to recreate much of the text from that chapter.
+
+```{r}
+head(mpg)
+```
+
+
+
+```{r}
+mpg %>% 
+  ggplot() +
+  geom_point(mapping = aes(x = displ, y = hwy))
+
+```
+
+Some ways to check dimensions / check out the dataset
+
+```{r}
+nrow(mpg)
+ncol(mpg)
+str(mpg)
+dim(mpg)
+mpg %>% glimpse
+```
+
+
+What does `drv` contain? 
+
+```{r}
+?mpg
+
+```
+
+```{r}
+
+mpg %>% ggplot() +
+  geom_point(aes(x = cyl, y = hwy))
+
+```
+
+```{r}
+
+mpg %>% ggplot() +
+  geom_point(aes(x = drv, y = class), position = "jitter")
+
+
+
+```
+
+```{r}
+mpg %>% ggplot() +
+  geom_point(aes(x = displ, y = hwy, colour = class), position = "jitter")
+
+
+
+# notice how this one looks ... unhelpful
+
+
+mpg %>% ggplot() +
+  geom_point(aes(x = displ, y = hwy, size = class), position = "jitter")
+
+mpg %>% ggplot() +
+  geom_point(aes(x = displ, y = hwy, alpha = class), position = "jitter")
+
+mpg %>% ggplot() +
+  geom_point(aes(x = displ, y = hwy, shape = class), position = "jitter")
+
+mpg %>% ggplot() +
+  geom_point(aes(x = displ, y = hwy), alpha = 0.3, position = "jitter")
+
+mpg %>% ggplot() +
+  geom_point(aes(x = displ, y = hwy, colour = cty, shape = class), position = "jitter")
+
+
+mpg %>% ggplot() +
+  geom_point(aes(x = displ, y = hwy, stroke = displ), position = "jitter")
+```
+
+
+Facetting
+
+```{r}
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 6)
+
+
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_grid(drv ~ cyl)
+
+```
+
+```{r}
+mpg %>% 
+  ggplot(mapping = aes(x = displ, y = hwy, colour = drv)) +
+  geom_smooth(mapping = aes(linetype = drv)) +
+  geom_point()
+
+```
+
+
+(skipping over a bunch of examples and exercises)
+
+```{r}
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut))
+```
+
+Behind the scenes, `geom_bar` is creating `count` to be the y axis.
+
+
+Lots of other good info in that chapter and the book generally. Check it out!
+
+
+
+
+
+
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+

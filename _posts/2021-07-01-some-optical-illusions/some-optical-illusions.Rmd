@@ -1,0 +1,88 @@
+---
+title: "Some optical illusions"
+description: |
+  Generating some optical illusions. Code courtesy of Andy Blance @ UNSW MED CBDRH.
+author:
+  - name: Shane Donohoe
+    url: https://example.com/shanedon
+date: 07-01-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(grid)
+
+```
+
+Which center box is lighter?
+
+```{r grey-squares}
+
+
+# Constructing some optical illusions.
+grid.newpage()
+
+grid.rect(c(1,3,1,3)/4, c(3,3,1,1)/4, 1/2, 1/2, gp = gpar(col = NA, fill = gray(1:4/5)))
+
+grid.rect(c(1,3,1,3)/4, c(3,3,1,1)/4, 1/6, 1/6, gp = gpar(col = NA, fill = gray(0.5)))
+
+```
+
+
+Centre boxes look different depending on background
+
+```{r blue-yellow}
+
+grid.newpage()
+
+grid.rect(c(1,3,1,3)/4, c(3,3,1,1)/4, 1/2, 1/2, gp = gpar(col = NA, fill = c("green", "red")))
+
+grid.rect(c(1,3,1,3)/4, c(3,3,1,1)/4, 1/6, 1/6, gp = gpar(col = NA, fill = c("blue", "blue","yellow", "yellow")))
+
+```
+
+Reverse of the above
+
+```{r red-green}
+
+grid.newpage()
+
+grid.rect(c(1,3,1,3)/4, c(3,3,1,1)/4, 1/2, 1/2, gp = gpar(col = NA, fill = c("yellow", "blue")))
+
+grid.rect(c(1,3,1,3)/4, c(3,3,1,1)/4, 1/6, 1/6, gp = gpar(col = NA, fill = c("red", "red","green", "green")))
+
+```
+
+Are the grey lines horizontal or slanted?
+
+```{r horizontal-lines}
+
+grid.newpage()
+
+rs <- expand.grid(x = seq(0, 1, 1/10), y = seq(0, 1, 1/10))
+
+grid.rect(rs$x, rs$y, 1/10/2, 1/10/2, gp = gpar(fill = "black", col = NA))
+
+grid.rect(rs$x + 1/10/4, rs$y + 1/10/2, 1/10/2, 1/10/2, gp = gpar(fill = "black", col = NA))
+
+ls <- expand.grid(x = 0:1, y = seq(0, 1, 1/20) - 1/20/2)
+
+grid.polyline(ls$x, ls$y, id = gl(nrow(ls)/2, 2), gp = gpar(col = "grey50", lwd = 1))
+
+
+```
+
+Working through the R code you can see how each of these images is constructed.
+
+---
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+
