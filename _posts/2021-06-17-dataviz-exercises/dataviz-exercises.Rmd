@@ -4,8 +4,9 @@ description: |
   Working through the week 3 interactive/tutorial of HDAT9800
 author:
   - name: Shane Donohoe
-    url: https://example.com/shanedon
+    url: https://shndon.github.io/shane-explores-some-data-science/
 date: 06-17-2021
+draft: false
 output:
   distill::distill_article:
     self_contained: false
@@ -49,7 +50,8 @@ mpg %>% glimpse
 What does `drv` contain? 
 
 ```{r}
-?mpg
+
+# ?mpg
 
 ```
 

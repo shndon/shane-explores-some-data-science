@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-06-17-dataviz-exercises/",
+    "title": "DataViz Exercises",
+    "description": "Working through the week 3 interactive/tutorial of HDAT9800",
+    "author": [
+      {
+        "name": "Shane Donohoe",
+        "url": "https://shndon.github.io/shane-explores-some-data-science/"
+      }
+    ],
+    "date": "2021-06-17",
+    "categories": [],
+    "contents": "\r\nWe are following some example work from https://r4ds.had.co.nz/data-visualisation.html\r\nBecause of time I’m not going to recreate much of the text from that chapter.\r\n\r\n# A tibble: 6 x 11\r\n  manufacturer model displ  year   cyl trans   drv     cty   hwy fl   \r\n  <chr>        <chr> <dbl> <int> <int> <chr>   <chr> <int> <int> <chr>\r\n1 audi         a4      1.8  1999     4 auto(l~ f        18    29 p    \r\n2 audi         a4      1.8  1999     4 manual~ f        21    29 p    \r\n3 audi         a4      2    2008     4 manual~ f        20    31 p    \r\n4 audi         a4      2    2008     4 auto(a~ f        21    30 p    \r\n5 audi         a4      2.8  1999     6 auto(l~ f        16    26 p    \r\n6 audi         a4      2.8  1999     6 manual~ f        18    26 p    \r\n# ... with 1 more variable: class <chr>\r\n\r\n\r\n\r\n\r\nSome ways to check dimensions / check out the dataset\r\n\r\n[1] 234\r\n[1] 11\r\ntibble [234 x 11] (S3: tbl_df/tbl/data.frame)\r\n $ manufacturer: chr [1:234] \"audi\" \"audi\" \"audi\" \"audi\" ...\r\n $ model       : chr [1:234] \"a4\" \"a4\" \"a4\" \"a4\" ...\r\n $ displ       : num [1:234] 1.8 1.8 2 2 2.8 2.8 3.1 1.8 1.8 2 ...\r\n $ year        : int [1:234] 1999 1999 2008 2008 1999 1999 2008 1999 1999 2008 ...\r\n $ cyl         : int [1:234] 4 4 4 4 6 6 6 4 4 4 ...\r\n $ trans       : chr [1:234] \"auto(l5)\" \"manual(m5)\" \"manual(m6)\" \"auto(av)\" ...\r\n $ drv         : chr [1:234] \"f\" \"f\" \"f\" \"f\" ...\r\n $ cty         : int [1:234] 18 21 20 21 16 18 18 18 16 20 ...\r\n $ hwy         : int [1:234] 29 29 31 30 26 26 27 26 25 28 ...\r\n $ fl          : chr [1:234] \"p\" \"p\" \"p\" \"p\" ...\r\n $ class       : chr [1:234] \"compact\" \"compact\" \"compact\" \"compact\" ...\r\n[1] 234  11\r\nRows: 234\r\nColumns: 11\r\n$ manufacturer <chr> \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"audi\",~\r\n$ model        <chr> \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4 q~\r\n$ displ        <dbl> 1.8, 1.8, 2.0, 2.0, 2.8, 2.8, 3.1, 1.8, 1.8, 2.~\r\n$ year         <int> 1999, 1999, 2008, 2008, 1999, 1999, 2008, 1999,~\r\n$ cyl          <int> 4, 4, 4, 4, 6, 6, 6, 4, 4, 4, 4, 6, 6, 6, 6, 6,~\r\n$ trans        <chr> \"auto(l5)\", \"manual(m5)\", \"manual(m6)\", \"auto(a~\r\n$ drv          <chr> \"f\", \"f\", \"f\", \"f\", \"f\", \"f\", \"f\", \"4\", \"4\", \"4~\r\n$ cty          <int> 18, 21, 20, 21, 16, 18, 18, 18, 16, 20, 19, 15,~\r\n$ hwy          <int> 29, 29, 31, 30, 26, 26, 27, 26, 25, 28, 27, 25,~\r\n$ fl           <chr> \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p~\r\n$ class        <chr> \"compact\", \"compact\", \"compact\", \"compact\", \"co~\r\n\r\nWhat does drv contain?\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nFacetting\r\n\r\n\r\n\r\n\r\n\r\n\r\n(skipping over a bunch of examples and exercises)\r\n\r\n\r\n\r\nBehind the scenes, geom_bar is creating count to be the y axis.\r\nLots of other good info in that chapter and the book generally. Check it out!\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+    "preview": "posts/2021-06-17-dataviz-exercises/dataviz-exercises_files/figure-html5/unnamed-chunk-2-1.png",
+    "last_modified": "2021-07-04T15:55:51+10:00",
+    "input_file": "dataviz-exercises.knit.md"
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome to Shane's Little Data Science Blog",
     "description": "Welcome to our new blog, Shane's Little Data Science Blog. We hope you enjoy \nreading what we have to say!",
