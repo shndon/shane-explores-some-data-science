@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-07-04-some-optical-illusions/",
+    "title": "Some optical illusions",
+    "description": "Generating some optical illusions. Code courtesy of Andy Blance @ UNSW MED CBDRH.",
+    "author": [
+      {
+        "name": "Shane Donohoe",
+        "url": "https://example.com/shanedon"
+      }
+    ],
+    "date": "2021-07-01",
+    "categories": [],
+    "contents": "\r\nWhich center box is lighter?\r\n\r\n\r\n# Constructing some optical illusions.\r\ngrid.newpage()\r\n\r\ngrid.rect(c(1,3,1,3)/4, c(3,3,1,1)/4, 1/2, 1/2, gp = gpar(col = NA, fill = gray(1:4/5)))\r\n\r\ngrid.rect(c(1,3,1,3)/4, c(3,3,1,1)/4, 1/6, 1/6, gp = gpar(col = NA, fill = gray(0.5)))\r\n\r\n\r\n\r\n\r\nCentre boxes look different depending on background\r\n\r\n\r\ngrid.newpage()\r\n\r\ngrid.rect(c(1,3,1,3)/4, c(3,3,1,1)/4, 1/2, 1/2, gp = gpar(col = NA, fill = c(\"green\", \"red\")))\r\n\r\ngrid.rect(c(1,3,1,3)/4, c(3,3,1,1)/4, 1/6, 1/6, gp = gpar(col = NA, fill = c(\"blue\", \"blue\",\"yellow\", \"yellow\")))\r\n\r\n\r\n\r\n\r\nReverse of the above\r\n\r\n\r\ngrid.newpage()\r\n\r\ngrid.rect(c(1,3,1,3)/4, c(3,3,1,1)/4, 1/2, 1/2, gp = gpar(col = NA, fill = c(\"yellow\", \"blue\")))\r\n\r\ngrid.rect(c(1,3,1,3)/4, c(3,3,1,1)/4, 1/6, 1/6, gp = gpar(col = NA, fill = c(\"red\", \"red\",\"green\", \"green\")))\r\n\r\n\r\n\r\n\r\nAre the grey lines horizontal or slanted?\r\n\r\n\r\ngrid.newpage()\r\n\r\nrs <- expand.grid(x = seq(0, 1, 1/10), y = seq(0, 1, 1/10))\r\n\r\ngrid.rect(rs$x, rs$y, 1/10/2, 1/10/2, gp = gpar(fill = \"black\", col = NA))\r\n\r\ngrid.rect(rs$x + 1/10/4, rs$y + 1/10/2, 1/10/2, 1/10/2, gp = gpar(fill = \"black\", col = NA))\r\n\r\nls <- expand.grid(x = 0:1, y = seq(0, 1, 1/20) - 1/20/2)\r\n\r\ngrid.polyline(ls$x, ls$y, id = gl(nrow(ls)/2, 2), gp = gpar(col = \"grey50\", lwd = 1))\r\n\r\n\r\n\r\n\r\nWorking through the R code you can see how each of these images is constructed.\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+    "preview": "posts/2021-07-04-some-optical-illusions/some-optical-illusions_files/figure-html5/grey-squares-1.png",
+    "last_modified": "2021-07-04T16:00:48+10:00",
+    "input_file": "some-optical-illusions.knit.md"
+  },
+  {
     "path": "posts/2021-06-17-dataviz-exercises/",
     "title": "DataViz Exercises",
     "description": "Working through the week 3 interactive/tutorial of HDAT9800",
